@@ -1,11 +1,11 @@
 import React from 'react';
-import Task1 from './components/tasks/Task1.js';
-import Task2 from './components/tasks/Task2.js';
-import Task3 from './components/tasks/Task3.js';
-import Task4 from './components/tasks/Task4.js';
+import Task1 from './components/Task1.js';
+import Task2 from './components/Task2.js';
+import Task3 from './components/Task3.js';
+import Task4 from './components/Task4.js';
 
 import API from './components/API.js';
-import Puzzle from './components/tasks/Puzzle.js';
+import Puzzle from './components/Puzzle.js';
 
 function App() {
   return (
