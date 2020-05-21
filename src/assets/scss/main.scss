@@ -1,0 +1,232 @@
+// Font
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:100,200,300,400,500,600,700');
+$font-body: 'Libre Franklin';
+
+// Rem calculator
+@function rem($size) {
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
+}
+
+// Colours
+$color-primary: #445a70;
+$color-secondary: #31aade;
+$color-tertiary: #f5f5f0;
+$color-red: #ce4141;
+$color-black: #29291b;
+$color-white: #fafafa;
+$color-grey: #dddddd;
+
+
+// General
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: rem(14);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $color-primary;
+  font-family: $font-body;
+  font-size: rem(14);
+  font-weight: 300;
+  line-height: 1.4;
+  background-color: $color-white;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: rem(15) 0;
+}
+
+// Headings
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+  font-weight: 300;
+  line-height: 1;
+  color: $color-primary;
+  margin: 0 0 rem(25);
+}
+
+h1, .h1 {
+  font-size: rem(36);
+}
+
+h2, .h2 {
+  font-size: rem(25);
+  line-height: 1;
+}
+
+h3, .h3 {
+  font-size: rem(22);
+}
+
+h4, .h4 {
+  font-size: rem(18);
+  font-weight: 500;
+  margin: 0 0 rem(15);
+}
+
+h5, .h5 {
+  font-size: rem(16);
+  font-weight: 500;
+  margin: 0 0 rem(15);
+}
+
+// Buttons
+.button {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 0 rem(15);
+  height: rem(35);
+  border-radius: rem(4);
+  border: rem(2) solid $color-grey;
+  background-color: $color-grey;
+  fill: $color-black;
+  color: $color-black;
+  font-weight: 500;
+  font-size: rem(14);
+  white-space: nowrap;
+  letter-spacing: .01em;
+  text-decoration: none;
+  cursor: pointer;
+
+  $root: &;
+
+  &:hover {
+    background-color: darken($color-grey, 10%);
+    border-color: darken($color-grey, 10%);
+  }
+
+  &--primary {
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+    color: $color-white;
+
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+      border-color: darken($color-secondary, 10%);
+    }
+  }
+
+  &--secondary {
+    background-color: $color-white;
+    border-color: $color-secondary;
+    color: $color-secondary;
+
+    &:hover {
+      color: darken($color-secondary, 10%);
+      border-color: darken($color-secondary, 10%);
+      background-color: $color-white;
+    }
+  }
+
+  &--disabled {
+    opacity: 0.2;
+  }
+
+  &__group {
+    #{$root} {
+      margin-right: rem(10);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Main
+main {
+  padding: rem(50) 0;
+}
+
+.container {
+  width: rem(1200);
+  max-width: 100%;
+  padding: rem(20);
+  margin: 0 auto;
+}
+
+// Messages 
+.message {
+  margin: rem(15) 0;
+  padding: rem(15) rem(20);
+  background-color: lighten($color-secondary, 30%);
+
+  &--error {
+    background-color: $color-red;
+    color: $color-white;
+  }
+}
+
+// Forms
+.input {
+  margin-bottom: rem(15);
+
+  &__label {
+    display: block;
+    font-weight: bold;
+    font-size: rem(14);
+    margin-bottom: rem(5);
+  }
+
+  &__help {
+    font-size: rem(12);
+    margin-top: rem(5);
+    display: block;
+  }
+
+  input {
+    display: inline-flex;
+    height: rem(35);
+    width: rem(350);
+    max-width: 100%;
+    align-items: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: rem(2);
+    border: rem(1) solid $color-grey;
+    color: $color-black;
+    padding: 0 .5em;
+
+    &[type="file"] {
+      padding-top: rem(4);
+    }
+  }
+}
+
+// Table
+table {
+  width: 100%;
+  text-align: left;
+
+  thead {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  tr:nth-child(even) {
+    background-color: $color-tertiary;
+  }
+
+  td, th {
+    padding: rem(10);
+  }
+} 
+
+// Tasks
+.task {
+  padding-bottom: rem(50);
+  margin-bottom: rem(25);
+  border-bottom: rem(1) dashed $color-grey;
+}
